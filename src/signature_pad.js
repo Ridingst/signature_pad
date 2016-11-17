@@ -85,11 +85,22 @@ var SignaturePad = (function (document) {
     };
 
     SignaturePad.prototype.fromDataURL = function (dataUrl) {
+        /* Old Definitions
         var self = this,
             image = new Image(),
             ratio = window.devicePixelRatio || 1,
             width = this._canvas.width / ratio,
             height = this._canvas.height / ratio;
+        */
+        
+        var self = this,
+            image = new Image(),
+            ratio = window.devicePixelRatio || 1,
+            width = this._canvas.width,
+            height = this._canvas.height;
+        
+        console.log('window.devicePixelRatio: ' + window.devicePixelRatio);
+        console.log('Sig Pad Ratio: ' + ratio);
 
         this._reset();
         image.src = dataUrl;
